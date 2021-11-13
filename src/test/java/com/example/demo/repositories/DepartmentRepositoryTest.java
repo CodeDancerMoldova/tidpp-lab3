@@ -20,14 +20,6 @@ public class DepartmentRepositoryTest {
     @Autowired
     DepartmentRepository departmentRepository;
 
-
-    @Test
-    void testFindAll() {
-        departmentRepository.save(DEPARTMENT_SECURITY_70);
-        List<Department> employeeDtoList = departmentRepository.findAll();
-        assertThat(employeeDtoList.size()).isEqualTo(1);
-    }
-
     @Test
     void testFindById() {
         Department department = departmentRepository.save(DEPARTMENT_SECURITY_70);
