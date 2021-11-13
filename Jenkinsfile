@@ -22,7 +22,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/CodeDancerMoldova/tidpp-lab3'
+                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CodeDancerMoldova/tidpp-lab3.git'
                 bat './mvnw clean compile'
             }
         }
