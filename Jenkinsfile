@@ -20,13 +20,13 @@ pipeline {
      }
 
     stages{
-        stage('build'){
+        stage('Build'){
             steps{
                 git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CodeDancerMoldova/tidpp-lab3.git'
                 bat './mvnw clean compile'
             }
         }
-        stage('test'){
+        stage('Unit Tests'){
             steps{
                 bat './mvnw test'
             }
@@ -47,7 +47,7 @@ pipeline {
     post {
           always {
 
-               emailext attachLog: true, body: 'Rezultat $BUILD_URL', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'gumaniuc2018@gmail.com'
+               emailext attachLog: true, body: 'Result $BUILD_URL', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'gumaniuc2018@gmail.com'
 
                junit '**/target/surefire-reports/*.xml'
 
@@ -65,7 +65,7 @@ pipeline {
 
 
          success {
-              echo "I am running because the job ran successfully"
+              echo "success!!!"
 
               script{
                           if(ON_SUCCESS_SEND_EMAIL == 'true'){
