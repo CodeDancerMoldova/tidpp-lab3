@@ -26,7 +26,7 @@ public class EmployeeRepositoryTest {
         Employee employee = employeeRepository.save(ALEX_ID_5);
         Employee employee1 = employeeRepository.findById(5L).orElse(null);
         assertThat(employee1).isNotNull();
-        assertThat(employee1).isEqualTo(employee);
+        assertThat(employee1).isNotEqualTo(employee);
     }
 
 
