@@ -47,7 +47,7 @@ pipeline {
     post {
           always {
 
-               emailext attachLog: true, body: 'Hai la o cafea sau la sushi?', subject: 'Дядя Богдан', to: 'lupusor.marinela@isa.utm.md'
+               emailext attachLog: true, body: 'Hai la o cafea sau la sushi?', subject: 'Дядя Богдан', to: 'gumaniuc2018@gmail.com'
 
                junit '**/target/surefire-reports/*.xml'
 
